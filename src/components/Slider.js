@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import {sliderItems} from '../data'
+import Circle from './Circle';
 
 const Container=styled.div`
   height: calc(100vh - 100px);    
@@ -43,11 +44,13 @@ const Slide=styled.div`
   height:100%;  
   display:flex;
   background-color: #${props=>props.bg};
+  position: relative;
 `
 const SlideImageContainer=styled.div`
   flex:1;
   height: 100%;
   padding: 0 30px;
+  z-index: 2;
 `
 const SlideImage=styled.img`  
   width:100%;
@@ -155,6 +158,10 @@ const Slider = () => {
         {sliderItems.map(slide=>{
           return (
             <Slide key={slide.id} bg={slide.bg}>
+              <Circle rayonX="460px" rayonY="540px" bg="#e7e6e5" top='2%' left="4%" />                              
+              <Circle rayonX="60px" rayonY="60px" bg="rgba(77,77,77,0.3)" top='12%' left="6%" />
+              <Circle rayonX="60px" rayonY="60px" bg="rgba(77,77,77,0.3)" top='48%' left="38%" />
+              <Circle rayonX="60px" rayonY="60px" bg="rgba(77,77,77,0.3)" top='85%' left="7%" />
               <SlideImageContainer>
                 <SlideImage src={slide.img} />
               </SlideImageContainer>

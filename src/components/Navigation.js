@@ -16,9 +16,9 @@ const MenuItem=styled.li`
     
 `
 const MenuItemLink=styled.a`
-    padding: 5px 15px;    
+    padding: 5px 10px;    
     text-decoration: none;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     cursor: pointer;
     transition: all .4s ease-in-out;
     &:hover{
