@@ -3,23 +3,18 @@ import TopMenu from '../components/TopMenu'
 import Slider from '../components/Slider'
 import Categories from '../components/Categories'
 import Promotions from '../components/Promotions'
-import Products from '../components/Products'
 import ScrollTop from '../components/ScrollTop'
 import Footer from '../components/Footer'
-import Separator from '../components/Separator'
 
 
 
-const Home = () => {
+const CategoriesList = () => {
   return (
     <div>
       <TopMenu />
       <NavBar />
       <Slider />
-      <Separator title={'Categories'}/>
-      <Categories />
-      <Separator title={'Products'}/>
-      <Products />
+      <Categories />      
       <Promotions />
       <Footer />
       <ScrollTop />
@@ -27,4 +22,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default CategoriesList

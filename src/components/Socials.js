@@ -3,6 +3,7 @@ import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
+import {md} from '../responsive'
 
 const Container=styled.div`
   margin: 10px 0;
@@ -10,6 +11,9 @@ const Container=styled.div`
   justify-content: center;
   align-items: flex-start;
   gap: 20px;
+  ${md({ 
+    gap:'7px',
+  })}
 `
 const IconContainer=styled.div`  
   display: flex;

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { xs } from '../responsive'
 
 const Container=styled.div`
     height: 200px;
@@ -47,7 +48,11 @@ const Button=styled.button`
     background-color: white;    
     color:red;
     border: 1px solid red;    
-  }
+  };
+  ${xs({
+    width: '50%',    
+  })}
+
 `
 
 const Promotions = () => {

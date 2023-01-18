@@ -93,28 +93,21 @@ color:black;
 }
 `
 
-const Products = () => {
+const Product = ({product}) => {
   return (
     <Container>
-        {
-            popularProducts.map(product=>{
-              return (
-                <ProductContainer key={product.id}>
-                  <Circle rayonX="180px" rayonY="180px" bg="#e7eabb" top='20%' left="20%" />                              
-                  <ImageContainer>
-                    <Image src={product.img} />                  
-                  </ImageContainer>
-                  <IconsContainer>
-                    <IconItem><AddShoppingCartIcon /></IconItem>
-                    <IconItem><DescriptionOutlinedIcon /></IconItem>
-                    <IconItem><ThumbUpOutlinedIcon /></IconItem>                
-                  </IconsContainer>
-                </ProductContainer>
-                )
-            })
-        }        
+      <ProductContainer>
+        <ImageContainer>
+          <Image src={product.img} />                  
+        </ImageContainer>
+        <IconsContainer>
+          <IconItem><AddShoppingCartIcon /></IconItem>
+          <IconItem><DescriptionOutlinedIcon /></IconItem>
+          <IconItem><ThumbUpOutlinedIcon /></IconItem>                
+        </IconsContainer>
+      </ProductContainer>            
     </Container>
   )
 }
 
-export default Products
+export default Product
