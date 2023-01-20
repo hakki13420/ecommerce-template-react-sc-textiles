@@ -11,7 +11,7 @@ const SeparatorContainer=styled.div`
 `
 const Title=styled.h1`
   font-size: 1.5rem;
-  width: 400px;
+  display: inline-block;
   height: 40px;
   background-color: teal;
   position: absolute;
@@ -21,25 +21,24 @@ const Title=styled.h1`
   color: white;
   top: 0;
   left: 0;
+  &:after{
+    content:'';    
+    position: absolute;
+    height : 0;
+    width : 0;
+    border : 20px solid teal;
+    border-top-color :transparent;
+    border-right-color :transparent;
+    bottom: 0;    
+    left: 100%;
+  }
 `
-const Triangle=styled.div`
-  display : inline-block;
-  height : 0;
-  width : 0;
-  border-top : 36px solid white;
-  border-left : 100px solid transparent;
-  position: absolute;
-  top: 0;
-  left: 300px;
-`
-
 
 const Separator = ({title}) => {
   return (
     <Container>
       <SeparatorContainer>
-        <Title>{title}</Title>
-        <Triangle></Triangle>
+        <Title>{title}</Title>        
       </SeparatorContainer>
     </Container>
   )

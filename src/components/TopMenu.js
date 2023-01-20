@@ -3,14 +3,15 @@ import styled from 'styled-components'
 import PhoneIcon from '@mui/icons-material/Phone';
 import MailIcon from '@mui/icons-material/Mail';
 import SearchIcon from '@mui/icons-material/Search';
+import CartIcon from './CartIcon'
 
 
 import Socials from './Socials'
-import {xs, sm, md} from '../responsive'
+import {xs, sm, md, lg} from '../responsive'
 
 
 const Container=styled.div`    
-  height: 30px;
+  height: 35px;
   padding: 15px 20px;
   background-color: rgba(0,0,0,0.7);
   color:white;
@@ -19,17 +20,13 @@ const Container=styled.div`
   align-items: center;
   justify-content: space-around;
 
-  ${xs({
-    flexDirection:'column',
-    height:'auto',
-    justifyContent: 'center',
+  ${xs({    
+    justifyContent: 'space-between',
     gap:'10px',
     fontSize:'.5rem',
   })};
   ${sm({
-    flexDirection:'column',
-    height:'auto',
-    justifyContent: 'center',
+    ustifyContent: 'space-between',
     gap:'10px',
   })};  
   ${md({    
@@ -40,36 +37,37 @@ const Container=styled.div`
 `
 
 const TopMenuItemContainer=styled.div`
+  flex:1;
   font-size:12px;
   display: flex;
   gap: 10px;
   align-items: center;
   ${xs({
-    justifyContent:'center'
+    //justifyContent:'center'
+    display:'none',
   })};
   ${sm({
-    justifyContent:'center'
+    justifyContent:'center',
+    display:'none',
   })};
   ${md({
     justifyContent:'center'
   })}
 `
-const Icon=styled.div`
-  flex: 1;
+const Icon=styled.div`  
   cursor: pointer;
   transition: all .4s ease;
   &:hover{
     color: coral;
   }
 `
-const Title=styled.div`
-  flex: 2;
+const Title=styled.div`  
   ${md({    
     flex:'1',
   })}  
 `
 const SearchContainer=styled.div`
-  flex: 1;
+  flex:1;
   display: flex;
   justify-content: flex-end;    
   align-items: center;
@@ -102,8 +100,20 @@ const SearchIconContainer=styled.div`
     display: flex;
     align-items: center;
     color:white;
+    transition: all .4s ease;
+    &:hover{
+      color: coral;
+    }
 `
-
+const CartContainer=styled.div`    
+  cursor: pointer;    
+  display: flex;
+  align-items: center;
+  color:white;
+  ${lg({
+    display:'none'
+  })}
+`
 const TopMenu = () => {
   const [displaySearh, setDisplaySearch]=useState(false)
 
@@ -114,24 +124,24 @@ const TopMenu = () => {
     <Container>
       <TopMenuItemContainer>
         <Icon><PhoneIcon/></Icon>
-        <Title>555.555.555</Title>
-        <Title>666.666.666</Title>
+        <Title>555.555.555 - 666.666.666</Title>        
       </TopMenuItemContainer>
       <TopMenuItemContainer>
         <Icon><MailIcon/></Icon>
         <Title>newTextiles@newtextile.com</Title>
       </TopMenuItemContainer>
+      <Socials />              
       <TopMenuItemContainer>
-        <Socials></Socials>        
+        <SearchContainer>
+          <SearchIconContainer>
+            <SearchIcon onClick={handlClick} />
+          </SearchIconContainer>
+          <Search displaySearh={displaySearh} placeholder='search...'></Search>
+        </SearchContainer>
       </TopMenuItemContainer>
-      <TopMenuItemContainer>
-      <SearchContainer>
-      <SearchIconContainer>
-          <SearchIcon onClick={handlClick} />
-      </SearchIconContainer>
-      <Search displaySearh={displaySearh} placeholder='search...'></Search>
-  </SearchContainer>
-      </TopMenuItemContainer>
+      <CartContainer>
+        <CartIcon></CartIcon>
+      </CartContainer>
     </Container>
   )
 }

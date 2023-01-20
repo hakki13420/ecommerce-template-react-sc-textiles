@@ -3,15 +3,23 @@ import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import {md} from '../responsive'
+import {xs, sm, md} from '../responsive'
 
 const Container=styled.div`
+  flex:1;
   margin: 10px 0;
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 20px;
+  gap: 10px;  
+  ${xs({ 
+    justifyContent: 'flex-start',
+  })};
+  ${sm({ 
+    justifyContent: 'flex-start',
+  })};
   ${md({ 
+    justifyContent: 'center',
     gap:'7px',
   })}
 `

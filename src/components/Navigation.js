@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import {Link} from 'react-router-dom'
+import {xs, sm, md} from '../responsive'
 
 const Container=styled.div`
   padding: 10px;
@@ -9,52 +11,51 @@ const Menu=styled.ul`
   margin: 0;
   list-style: none;
   display: flex;
-  align-items: center;
+  align-items: center;  
   gap: 10px;
+  ${xs({
+    flexDirection:'column',
+  })};
+  ${sm({
+    flexDirection:'column',
+  })};
+  ${md({
+    flexDirection:'column',
+  })};
 `
 const MenuItem=styled.li`
     
 `
-const MenuItemLink=styled.a`
-  padding: 5px 10px;    
-  text-decoration: none;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: all .4s ease-in-out;
-  &:hover{
-      text-decoration: underline;
-      color: black;
-  }
-`
+
 const Navigation = () => {
   return (
     <Container>
       <Menu>
-          <MenuItem>
-              <MenuItemLink>
-                  Home
-              </MenuItemLink>
-          </MenuItem>
-          <MenuItem>
-              <MenuItemLink>
-                  Categories
-              </MenuItemLink>
-          </MenuItem>
-          <MenuItem>
-              <MenuItemLink>
-                  Products
-              </MenuItemLink>
-          </MenuItem>
-          <MenuItem>
-              <MenuItemLink>
-                  About
-              </MenuItemLink>
-          </MenuItem>
-          <MenuItem>
-              <MenuItemLink>
-                  Contact
-              </MenuItemLink>
-          </MenuItem>
+        <MenuItem>          
+          <Link to='/'>
+            Home
+          </Link>          
+        </MenuItem>
+        <MenuItem>          
+          <Link to='/categories'>
+            Categories
+          </Link>        
+        </MenuItem>
+        <MenuItem>          
+          <Link to='/products'>
+            Products
+          </Link>        
+        </MenuItem>
+        <MenuItem>          
+          <Link to='/about'>
+            About
+          </Link>          
+        </MenuItem>
+        <MenuItem>          
+          <Link to='/contact'>
+            Contact
+          </Link>          
+        </MenuItem>
       </Menu>
     </Container>
   )

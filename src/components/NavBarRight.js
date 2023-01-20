@@ -1,6 +1,7 @@
 import styled from 'styled-components'
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import { xs, sm } from '../responsive';
+import { xs, sm, md, lg } from '../responsive';
+import CartIcon from './CartIcon';
+import {Link} from 'react-router-dom'
 
 const Container=styled.div`
     padding: 10px;
@@ -13,14 +14,20 @@ const Registration=styled.div`
   flex:1;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   gap: 10px;
   ${xs({
     justifyContent: 'flex-end',
+    flexDirection:'column',
   })};
   ${sm({
   justifyContent: 'flex-end',
-})}
+  flexDirection:'column',
+  })};
+  ${md({
+  justifyContent: 'flex-end',
+  flexDirection:'column',
+  })}
 `
 const RegistrationText=styled.a`
   text-decoration: none;
@@ -35,59 +42,32 @@ const RegistrationText=styled.a`
     fontSize: '.8rem',
   })}
 `
-const CartContainer=styled.div`
-  flex: 1;
-  display: flex;  
-  justify-content: flex-end;    
-  align-items: center;  
-  ${xs({
+const CartContainer=styled.div`  
+  display: flex;
+  ${xs({    
     display:'none',
   })};
   ${sm({
     display:'none',
-  })}
+  })};
+  ${md({
+    display:'none',
+  })};
 `
-const CartIcon=styled.div`  
-  height: 30px;
-  width: 30px;  
-  color: white;
-  position: relative;
-  transition: all .4s ease;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  &:hover{
-    color: black;
-  }  
-`
-const Badge=styled.span`
-  background-color: teal;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 15px;
-  width: 15px;
-  border-radius:50%;
-  position: absolute;
-  top:-8px;
-  right: 0;  
-  font-size: .6rem;
-`
-
 const NavBarRight = () => {    
   return (
     <Container>
-        <Registration>
-            <RegistrationText>Login</RegistrationText>
-            <RegistrationText>Register</RegistrationText>
-        </Registration>
-        <CartContainer>
-          <CartIcon>
-            <ShoppingCartOutlinedIcon />                
-            <Badge>12</Badge>
-          </CartIcon>
-        </CartContainer>
+      <Registration>
+        <Link to='/login'>
+          <RegistrationText>Login</RegistrationText>
+        </Link>
+        <Link to='/register'>
+          <RegistrationText>Register</RegistrationText>
+        </Link>
+      </Registration>
+      <CartContainer>
+        <CartIcon></CartIcon>
+      </CartContainer>
     </Container>
   )
 }

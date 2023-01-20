@@ -20,12 +20,12 @@ const LogoText=styled.h1`
   })}
 `
 const FirstPart=styled.span`
-  font-size: 32px;
+  font-size: 24px;
   color: red;
   border-radius: 50%;
   background-color: white;  
   font-weight: 600;
-  padding: 7px 2px;
+  padding: 5px 2px;
   ${xs({
     fontSize:'.8rem',
     fontWeight: '200',
@@ -46,10 +46,10 @@ const FirstPart=styled.span`
   })};
 `
 const SecondPart=styled.span`
-  font-size: 18px;
+  font-size: 16px;
   color: white;  
   letter-spacing: 3px;
-  margin-left: 10px;
+  margin-left: 5px;
   font-weight: 400;
   
   ${xs({

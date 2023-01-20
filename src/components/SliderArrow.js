@@ -1,9 +1,6 @@
-//import {useRef, useState} from 'react'
 import styled from 'styled-components'
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-
-
 
 const Arrow=styled.div`
   height: 40px;

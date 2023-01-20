@@ -1,8 +1,7 @@
 import { useRef, useState } from "react"
 
 const useSlide=({sliderItems})=>{
-  console.log(sliderItems)
-    
+     
   const [indexSlide, setIndexSlide]=useState(0)
   const timerRef=useRef()
 
